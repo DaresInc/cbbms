@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B6CA8AC-B218-4996-BD0A-82812F213E43}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cbbmsR3</RootNamespace>
+    <AssemblyName>cbbmsR3</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AppFilesController.cs" />
+    <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppFilesController.cs" />
+    <Compile Include="Controllers\AppUsersController.cs" />
+    <Compile Include="Controllers\BloodSamplesController.cs" />
+    <Compile Include="Controllers\BloodSampleTestsController.cs" />
+    <Compile Include="Controllers\BloodTestDefaultValuesController.cs" />
+    <Compile Include="Controllers\BloodTestDetailsController.cs" />
+    <Compile Include="Controllers\BloodTestsController.cs" />
+    <Compile Include="Controllers\BloodTestTypesController.cs" />
+    <Compile Include="Controllers\BuildHistoriesController.cs" />
+    <Compile Include="Controllers\ComponentsController.cs" />
+    <Compile Include="Controllers\EngineeringChangeRequestsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventoriesController.cs" />
+    <Compile Include="Controllers\InventoryItemsController.cs" />
+    <Compile Include="Controllers\ItemCategoriesController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ModulesController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\StockIssuedItemsController.cs" />
+    <Compile Include="Controllers\StockIssueVouchersController.cs" />
+    <Compile Include="Controllers\StockRecievedItemsController.cs" />
+    <Compile Include="Controllers\StockRecieveVouchersController.cs" />
+    <Compile Include="Controllers\StockReturnedItemsController.cs" />
+    <Compile Include="Controllers\StockReturnVouchersController.cs" />
+    <Compile Include="Controllers\StockTransferedItemsController.cs" />
+    <Compile Include="Controllers\StockTransferVouchersController.cs" />
+    <Compile Include="Controllers\SwiftInventoryTransfersController.cs" />
+    <Compile Include="Controllers\ToDoesController.cs" />
+    <Compile Include="Controllers\UoMsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608111748274_InitialCreate.cs" />
+    <Compile Include="Migrations\201608111748274_InitialCreate.Designer.cs">
+      <DependentUpon>201608111748274_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608121741499_20160812104123_SecondMigration.cs" />
+    <Compile Include="Migrations\201608121741499_20160812104123_SecondMigration.Designer.cs">
+      <DependentUpon>201608121741499_20160812104123_SecondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608140655196_Image_and_itemCategory_Model_Update.cs" />
+    <Compile Include="Migrations\201608140655196_Image_and_itemCategory_Model_Update.Designer.cs">
+      <DependentUpon>201608140655196_Image_and_itemCategory_Model_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608140731500_image_imageDescription_Change_To_ImageName.cs" />
+    <Compile Include="Migrations\201608140731500_image_imageDescription_Change_To_ImageName.Designer.cs">
+      <DependentUpon>201608140731500_image_imageDescription_Change_To_ImageName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608150540568_labmanagement_model_Addition.cs" />
+    <Compile Include="Migrations\201608150540568_labmanagement_model_Addition.Designer.cs">
+      <DependentUpon>201608150540568_labmanagement_model_Addition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608150636042_Images_Changes_To_Files.cs" />
+    <Compile Include="Migrations\201608150636042_Images_Changes_To_Files.Designer.cs">
+      <DependentUpon>201608150636042_Images_Changes_To_Files.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608150752570_File_Changes_AppFile.cs" />
+    <Compile Include="Migrations\201608150752570_File_Changes_AppFile.Designer.cs">
+      <DependentUpon>201608150752570_File_Changes_AppFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608150831142_Changing_UserID_Type_Int_To_String.cs" />
+    <Compile Include="Migrations\201608150831142_Changing_UserID_Type_Int_To_String.Designer.cs">
+      <DependentUpon>201608150831142_Changing_UserID_Type_Int_To_String.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608151652405_Minor_changes_to_InventoryItems_Items_Status.cs" />
+    <Compile Include="Migrations\201608151652405_Minor_changes_to_InventoryItems_Items_Status.Designer.cs">
+      <DependentUpon>201608151652405_Minor_changes_to_InventoryItems_Items_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CnfMgt\BuildHistory.cs" />
+    <Compile Include="Models\CnfMgt\Component.cs" />
+    <Compile Include="Models\CnfMgt\EngineeringChangeRequest.cs" />
+    <Compile Include="Models\CnfMgt\Module.cs" />
+    <Compile Include="Models\CnfMgt\Product.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\InvMgt\Inventory.cs" />
+    <Compile Include="Models\InvMgt\InventoryItem.cs" />
+    <Compile Include="Models\InvMgt\Item.cs" />
+    <Compile Include="Models\InvMgt\ItemCategory.cs" />
+    <Compile Include="Models\InvMgt\StockIssuedItem.cs" />
+    <Compile Include="Models\InvMgt\StockIssueVoucher.cs" />
+    <Compile Include="Models\InvMgt\StockRecievedItem.cs" />
+    <Compile Include="Models\InvMgt\StockRecieveVoucher.cs" />
+    <Compile Include="Models\InvMgt\StockReturnedItem.cs" />
+    <Compile Include="Models\InvMgt\StockReturnVoucher.cs" />
+    <Compile Include="Models\InvMgt\StockTransferedItem.cs" />
+    <Compile Include="Models\InvMgt\StockTransferVoucher.cs" />
+    <Compile Include="Models\InvMgt\SwiftInventoryTransfer.cs" />
+    <Compile Include="Models\LabMgt\BloodSample.cs" />
+    <Compile Include="Models\LabMgt\BloodSampleTest.cs" />
+    <Compile Include="Models\LabMgt\BloodTest.cs" />
+    <Compile Include="Models\LabMgt\BloodTestDefaultValue.cs" />
+    <Compile Include="Models\LabMgt\BloodTestDetail.cs" />
+    <Compile Include="Models\LabMgt\BloodTestType.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProjMgt\Project.cs" />
+    <Compile Include="Models\ProjMgt\ToDo.cs" />
+    <Compile Include="Models\SysMgt\AppFile.cs" />
+    <Compile Include="Models\SysMgt\Location.cs" />
+    <Compile Include="Models\SysMgt\Status.cs" />
+    <Compile Include="Models\SysMgt\UoM.cs" />
+    <Compile Include="Models\UsrMgt\AppUser.cs" />
+    <Compile Include="Models\UsrMgt\Contact.cs" />
+    <Compile Include="Models\UsrMgt\LogIn.cs" />
+    <Compile Include="Models\UsrMgt\Message.cs" />
+    <Compile Include="Models\UsrMgt\Notification.cs" />
+    <Compile Include="Models\UsrMgt\Role.cs" />
+    <Compile Include="Models\UsrMgt\UserAddress.cs" />
+    <Compile Include="Models\UsrMgt\UserProfile.cs" />
+    <Compile Include="Models\UsrMgt\UserRole.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Files\AppContent\FileIcon.png" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\cbbmsR3.dll" />
+    <Content Include="bin\cbbmsR3.pdb" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="obj\Debug\cbbmsR3.csproj.FileListAbsolute.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="obj\Debug\build.force" />
+    <Content Include="obj\Debug\cbbmsR3.csprojResolveAssemblyReference.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\User\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\AppFiles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AppFiles\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AppFiles\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AppFiles\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AppFiles\Index.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\BuildHistories\Create.cshtml" />
+    <Content Include="Views\BuildHistories\Delete.cshtml" />
+    <Content Include="Views\BuildHistories\Details.cshtml" />
+    <Content Include="Views\BuildHistories\Edit.cshtml" />
+    <Content Include="Views\BuildHistories\Index.cshtml" />
+    <Content Include="Views\Components\Create.cshtml" />
+    <Content Include="Views\Components\Delete.cshtml" />
+    <Content Include="Views\Components\Details.cshtml" />
+    <Content Include="Views\Components\Edit.cshtml" />
+    <Content Include="Views\Components\Index.cshtml" />
+    <Content Include="Views\EngineeringChangeRequests\Create.cshtml" />
+    <Content Include="Views\EngineeringChangeRequests\Delete.cshtml" />
+    <Content Include="Views\EngineeringChangeRequests\Details.cshtml" />
+    <Content Include="Views\EngineeringChangeRequests\Edit.cshtml" />
+    <Content Include="Views\EngineeringChangeRequests\Index.cshtml" />
+    <Content Include="Views\Inventories\Create.cshtml" />
+    <Content Include="Views\Inventories\Delete.cshtml" />
+    <Content Include="Views\Inventories\Details.cshtml" />
+    <Content Include="Views\Inventories\Edit.cshtml" />
+    <Content Include="Views\Inventories\Index.cshtml" />
+    <Content Include="Views\InventoryItems\Create.cshtml" />
+    <Content Include="Views\InventoryItems\Delete.cshtml" />
+    <Content Include="Views\InventoryItems\Details.cshtml" />
+    <Content Include="Views\InventoryItems\Edit.cshtml" />
+    <Content Include="Views\InventoryItems\Index.cshtml" />
+    <Content Include="Views\Items\Create.cshtml" />
+    <Content Include="Views\Items\Delete.cshtml" />
+    <Content Include="Views\Items\Details.cshtml" />
+    <Content Include="Views\Items\Edit.cshtml" />
+    <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Modules\Create.cshtml" />
+    <Content Include="Views\Modules\Delete.cshtml" />
+    <Content Include="Views\Modules\Details.cshtml" />
+    <Content Include="Views\Modules\Edit.cshtml" />
+    <Content Include="Views\Modules\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Status\Create.cshtml" />
+    <Content Include="Views\Status\Delete.cshtml" />
+    <Content Include="Views\Status\Details.cshtml" />
+    <Content Include="Views\Status\Edit.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\StockIssuedItems\Create.cshtml" />
+    <Content Include="Views\StockIssuedItems\Delete.cshtml" />
+    <Content Include="Views\StockIssuedItems\Details.cshtml" />
+    <Content Include="Views\StockIssuedItems\Edit.cshtml" />
+    <Content Include="Views\StockIssuedItems\Index.cshtml" />
+    <Content Include="Views\StockIssueVouchers\Create.cshtml" />
+    <Content Include="Views\StockIssueVouchers\Delete.cshtml" />
+    <Content Include="Views\StockIssueVouchers\Details.cshtml" />
+    <Content Include="Views\StockIssueVouchers\Edit.cshtml" />
+    <Content Include="Views\StockIssueVouchers\Index.cshtml" />
+    <Content Include="Views\StockRecievedItems\Create.cshtml" />
+    <Content Include="Views\StockRecievedItems\Delete.cshtml" />
+    <Content Include="Views\StockRecievedItems\Details.cshtml" />
+    <Content Include="Views\StockRecievedItems\Edit.cshtml" />
+    <Content Include="Views\StockRecievedItems\Index.cshtml" />
+    <Content Include="Views\StockRecieveVouchers\Create.cshtml" />
+    <Content Include="Views\StockRecieveVouchers\Delete.cshtml" />
+    <Content Include="Views\StockRecieveVouchers\Details.cshtml" />
+    <Content Include="Views\StockRecieveVouchers\Edit.cshtml" />
+    <Content Include="Views\StockRecieveVouchers\Index.cshtml" />
+    <Content Include="Views\StockReturnedItems\Create.cshtml" />
+    <Content Include="Views\StockReturnedItems\Delete.cshtml" />
+    <Content Include="Views\StockReturnedItems\Details.cshtml" />
+    <Content Include="Views\StockReturnedItems\Edit.cshtml" />
+    <Content Include="Views\StockReturnedItems\Index.cshtml" />
+    <Content Include="Views\StockReturnVouchers\Create.cshtml" />
+    <Content Include="Views\StockReturnVouchers\Delete.cshtml" />
+    <Content Include="Views\StockReturnVouchers\Details.cshtml" />
+    <Content Include="Views\StockReturnVouchers\Edit.cshtml" />
+    <Content Include="Views\StockReturnVouchers\Index.cshtml" />
+    <Content Include="Views\SwiftInventoryTransfers\Create.cshtml" />
+    <Content Include="Views\SwiftInventoryTransfers\Delete.cshtml" />
+    <Content Include="Views\SwiftInventoryTransfers\Details.cshtml" />
+    <Content Include="Views\SwiftInventoryTransfers\Edit.cshtml" />
+    <Content Include="Views\SwiftInventoryTransfers\Index.cshtml" />
+    <Content Include="Views\ToDoes\Create.cshtml" />
+    <Content Include="Views\ToDoes\Delete.cshtml" />
+    <Content Include="Views\ToDoes\Details.cshtml" />
+    <Content Include="Views\ToDoes\Edit.cshtml" />
+    <Content Include="Views\ToDoes\Index.cshtml" />
+    <Content Include="Views\UoMs\Create.cshtml" />
+    <Content Include="Views\UoMs\Delete.cshtml" />
+    <Content Include="Views\UoMs\Details.cshtml" />
+    <Content Include="Views\UoMs\Edit.cshtml" />
+    <Content Include="Views\UoMs\Index.cshtml" />
+    <Content Include="Views\Shared\_AppMenuBar.cshtml" />
+    <Content Include="Views\StockTransferVouchers\Create.cshtml" />
+    <Content Include="Views\StockTransferVouchers\Delete.cshtml" />
+    <Content Include="Views\StockTransferVouchers\Details.cshtml" />
+    <Content Include="Views\StockTransferVouchers\Edit.cshtml" />
+    <Content Include="Views\StockTransferVouchers\Index.cshtml" />
+    <Content Include="Views\StockTransferedItems\Create.cshtml" />
+    <Content Include="Views\StockTransferedItems\Delete.cshtml" />
+    <Content Include="Views\StockTransferedItems\Details.cshtml" />
+    <Content Include="Views\StockTransferedItems\Edit.cshtml" />
+    <Content Include="Views\StockTransferedItems\Index.cshtml" />
+    <Content Include="Views\BloodSamples\Create.cshtml" />
+    <Content Include="Views\BloodSamples\Delete.cshtml" />
+    <Content Include="Views\BloodSamples\Details.cshtml" />
+    <Content Include="Views\BloodSamples\Edit.cshtml" />
+    <Content Include="Views\BloodSamples\Index.cshtml" />
+    <Content Include="Views\BloodSampleTests\Create.cshtml" />
+    <Content Include="Views\BloodSampleTests\Delete.cshtml" />
+    <Content Include="Views\BloodSampleTests\Details.cshtml" />
+    <Content Include="Views\BloodSampleTests\Edit.cshtml" />
+    <Content Include="Views\BloodSampleTests\Index.cshtml" />
+    <Content Include="Views\BloodTests\Create.cshtml" />
+    <Content Include="Views\BloodTests\Delete.cshtml" />
+    <Content Include="Views\BloodTests\Details.cshtml" />
+    <Content Include="Views\BloodTests\Edit.cshtml" />
+    <Content Include="Views\BloodTests\Index.cshtml" />
+    <Content Include="Views\BloodTestDefaultValues\Create.cshtml" />
+    <Content Include="Views\BloodTestDefaultValues\Delete.cshtml" />
+    <Content Include="Views\BloodTestDefaultValues\Details.cshtml" />
+    <Content Include="Views\BloodTestDefaultValues\Edit.cshtml" />
+    <Content Include="Views\BloodTestDefaultValues\Index.cshtml" />
+    <Content Include="Views\BloodTestDetails\Create.cshtml" />
+    <Content Include="Views\BloodTestDetails\Delete.cshtml" />
+    <Content Include="Views\BloodTestDetails\Details.cshtml" />
+    <Content Include="Views\BloodTestDetails\Edit.cshtml" />
+    <Content Include="Views\BloodTestDetails\Index.cshtml" />
+    <Content Include="Views\BloodTestTypes\Create.cshtml" />
+    <Content Include="Views\BloodTestTypes\Delete.cshtml" />
+    <Content Include="Views\BloodTestTypes\Details.cshtml" />
+    <Content Include="Views\BloodTestTypes\Edit.cshtml" />
+    <Content Include="Views\BloodTestTypes\Index.cshtml" />
+    <Content Include="Views\ItemCategories\Create.cshtml" />
+    <Content Include="Views\ItemCategories\Delete.cshtml" />
+    <Content Include="Views\ItemCategories\Details.cshtml" />
+    <Content Include="Views\ItemCategories\Edit.cshtml" />
+    <Content Include="Views\ItemCategories\Index.cshtml" />
+    <Content Include="Views\AppFiles\Create.cshtml" />
+    <Content Include="Views\AppFiles\Delete.cshtml" />
+    <Content Include="Views\AppFiles\Details.cshtml" />
+    <Content Include="Views\AppFiles\Edit.cshtml" />
+    <Content Include="Views\AppFiles\Index.cshtml" />
+    <Content Include="Views\AppUsers\Create.cshtml" />
+    <Content Include="Views\AppUsers\Delete.cshtml" />
+    <Content Include="Views\AppUsers\Details.cshtml" />
+    <Content Include="Views\AppUsers\Edit.cshtml" />
+    <Content Include="Views\AppUsers\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Files\UserFiles\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\User\Controllers\" />
+    <Folder Include="Areas\User\Models\" />
+    <Folder Include="Areas\User\Views\Shared\" />
+    <Folder Include="Imgs\AppImages\" />
+    <Folder Include="Models\Dl\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608111748274_InitialCreate.resx">
+      <DependentUpon>201608111748274_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608121741499_20160812104123_SecondMigration.resx">
+      <DependentUpon>201608121741499_20160812104123_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608140655196_Image_and_itemCategory_Model_Update.resx">
+      <DependentUpon>201608140655196_Image_and_itemCategory_Model_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608140731500_image_imageDescription_Change_To_ImageName.resx">
+      <DependentUpon>201608140731500_image_imageDescription_Change_To_ImageName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608150540568_labmanagement_model_Addition.resx">
+      <DependentUpon>201608150540568_labmanagement_model_Addition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608150636042_Images_Changes_To_Files.resx">
+      <DependentUpon>201608150636042_Images_Changes_To_Files.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608150752570_File_Changes_AppFile.resx">
+      <DependentUpon>201608150752570_File_Changes_AppFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608150831142_Changing_UserID_Type_Int_To_String.resx">
+      <DependentUpon>201608150831142_Changing_UserID_Type_Int_To_String.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608151652405_Minor_changes_to_InventoryItems_Items_Status.resx">
+      <DependentUpon>201608151652405_Minor_changes_to_InventoryItems_Items_Status.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50357</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50357/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

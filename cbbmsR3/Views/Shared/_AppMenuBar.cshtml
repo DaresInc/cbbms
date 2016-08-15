@@ -1,0 +1,176 @@
+﻿@{
+
+    if (User.Identity.IsAuthenticated)
+    {
+        //this content is shown only when use is loged in
+        <div class="navbar-right">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="">
+                    <div class="well ">
+
+                        <ul class="nav nav-stacked">
+                            @*  Configuration Managment *@
+                            <li>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li>
+                                            <a href="@Url.Action("Index", "Items")"><i class="glyphicon glyphicon-map-marker"></i> Items </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "ItemCategories")"><i class="glyphicon glyphicon-barcode"></i> Item Categories </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "UoMs")"><i class="glyphicon glyphicon-star"></i> Unit of Measurements(UOM) </a>
+                                        </li>
+
+
+                                        <li>
+                                            <a href="@Url.Action("Index", "Products")"><i class="glyphicon glyphicon-file"></i> System </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "Modules")"><i class="glyphicon glyphicon-file"></i> Module </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "Components")"><i class="glyphicon glyphicon-file"></i> Components  </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "BuildHistories")"><i class="glyphicon glyphicon-file"></i> Build History Dossier (BHD) </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "EngineeringChangeRequests")"><i class="glyphicon glyphicon-file"></i> Engineering Change Requests(ECR) </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            @*  Inventory Managment *@
+                            <li>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li>
+                                            <a href="@Url.Action("Index","Inventories")"><i class="glyphicon glyphicon-user"></i> Inventories </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index","InventoryItems")"><i class="glyphicon glyphicon-user"></i> Inventory Items </a>
+                                        </li>
+
+
+                                        <li>
+                                            <a href="@Url.Action("Index", "StockIssueVouchers")"><i class="glyphicon glyphicon-star"></i> Stock Issue Voucher(SIV) </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "StockIssuedItems")"><i class="glyphicon glyphicon-star"></i> Stock Issued Items </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="@Url.Action("Index", "StockRecieveVouchers")"><i class="glyphicon glyphicon-star"></i> Stock Recieve Voucher(SRV)</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "StockRecievedItems")"><i class="glyphicon glyphicon-star"></i> Stock Recieve Items </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="@Url.Action("Index", "StockReturnVouchers")"><i class="glyphicon glyphicon-star"></i> Stock Return Voucher(SRnV)</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "StockReturnedItems")"><i class="glyphicon glyphicon-star"></i> Stock Returned Items </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="@Url.Action("Index", "StockTransferVouchers")"><i class="glyphicon glyphicon-star"></i> Stock Transfer Voucher(STV)</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "StockTransferedItems")"><i class="glyphicon glyphicon-star"></i> Stock Transfered Items </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="@Url.Action("Index", "SwiftInventoryTransfers")"><i class="glyphicon glyphicon-star"></i> Swift Inventory Transfer Facility (STIF)</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            @*  Project Managemnt Managment *@
+                            <li>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li>
+                                            <a href="@Url.Action("Index", "Projects")"><i class="glyphicon glyphicon-flag"></i> Projects </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "ToDos")"><i class="glyphicon glyphicon-flag"></i> ToDos Tasks </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            @*  System Management Managment *@
+                            <li>
+                                <div class="navbar">
+                                    <ul class="nav navbar-nav nav-tabs">
+                                        <li>
+                                            <a href="@Url.Action("Index", "Locations")"><i class="glyphicon glyphicon-file"></i> Location </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "AppFiles")"><i class="glyphicon glyphicon-file"></i> Upload Files </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            @*  Lab Managment *@
+                            <li>
+                                <div class="navbar">
+                                    <ul class="nav navbar-nav navbar-btn">
+
+                                        <li>
+                                            <a href="@Url.Action("Index", "BloodSamples")"><i class="glyphicon glyphicon-file"></i> Blood Samples </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "BloodSampleTests")"><i class="glyphicon glyphicon-file"></i> Blood Sample Tests </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "BloodTestDefaultValues")"><i class="glyphicon glyphicon-file"></i> Blood Test Default Values </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "BloodTestDetails")"><i class="glyphicon glyphicon-file"></i> Blood Test Details </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "BloodTests")"><i class="glyphicon glyphicon-file"></i> Blood Tests </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "BloodTestTypes")"><i class="glyphicon glyphicon-file"></i> Blood Test Types </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            @*  DataBase Managment *@
+                            <li>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li>
+                                            <a href="@Url.Action("Index", "AppUsers")"><i class="glyphicon glyphicon-user"></i> Application User </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        // Else code goes here
+    }
+
+}

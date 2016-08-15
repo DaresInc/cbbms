@@ -1,0 +1,39 @@
+﻿@model IEnumerable<cbbmsR3.Models.LabMgt.BloodSampleTest>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodSample.BloodSampleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodTest.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodSample.BloodSampleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodTest.Remarks)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BloodSampleTestId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BloodSampleTestId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BloodSampleTestId })
+        </td>
+    </tr>
+}
+
+</table>

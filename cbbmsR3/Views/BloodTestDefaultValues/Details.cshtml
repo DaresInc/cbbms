@@ -1,0 +1,50 @@
+﻿@model cbbmsR3.Models.LabMgt.BloodTestDefaultValue
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BloodTestDefaultValue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodTestType.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodTestType.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Attribute)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attribute)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefaultValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BloodTestDefaultValueId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

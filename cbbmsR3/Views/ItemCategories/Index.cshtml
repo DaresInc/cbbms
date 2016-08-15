@@ -1,0 +1,51 @@
+﻿@model IEnumerable<cbbmsRnD.Models.InvMgt.ItemCategory>
+
+@{
+    ViewBag.Title = "Item Categories";
+}
+
+<h2>Index</h2>
+
+<p class="icon-bar">
+    @Html.ActionLink("Create New", "Create",new {@class= "glyphicon-plus-sign" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Display("Picture")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img class="img-thumbnail img-thmb-64" src="@item.AppFile.GetFilePath"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ItemCategoryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ItemCategoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ItemCategoryId })
+        </td>
+    </tr>
+}
+
+</table>

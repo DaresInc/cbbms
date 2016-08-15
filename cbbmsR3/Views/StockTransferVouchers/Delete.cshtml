@@ -1,0 +1,80 @@
+﻿@model cbbmsRnD.Models.InvMgt.StockTransferVoucher
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StockTransferVoucher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockTransferedFromInventoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockTransferedFromInventoryId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockTransferedToInventoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockTransferedToInventoryId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockRecievedByUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockRecievedByUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockTransferdByUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockTransferdByUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<cbbmsRnD.Models.InvMgt.InventoryItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Inventory.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QtyRecieved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QtyIssued)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferenceDocument)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferenceDocumentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inventory.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QtyRecieved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QtyIssued)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReferenceDocument)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReferenceDocumentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InventoryItemId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InventoryItemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InventoryItemId })
+        </td>
+    </tr>
+}
+
+</table>

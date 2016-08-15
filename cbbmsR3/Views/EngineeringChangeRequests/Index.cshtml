@@ -1,0 +1,69 @@
+﻿@model IEnumerable<cbbmsRnD.Models.CnfMgt.EngineeringChangeRequest>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Component.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChangeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequesteeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChangeType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequesteeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EngineeringChangeRequestId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EngineeringChangeRequestId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EngineeringChangeRequestId })
+        </td>
+    </tr>
+}
+
+</table>

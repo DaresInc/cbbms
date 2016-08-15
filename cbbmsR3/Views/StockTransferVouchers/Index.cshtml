@@ -1,0 +1,69 @@
+﻿@model IEnumerable<cbbmsRnD.Models.InvMgt.StockTransferVoucher>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockTransferedFromInventoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockTransferedToInventoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockRecievedByUserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockTransferdByUserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockTransferedFromInventoryId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockTransferedToInventoryId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockRecievedByUserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockTransferdByUserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StockTransferVoucherId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StockTransferVoucherId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StockTransferVoucherId })
+        </td>
+    </tr>
+}
+
+</table>

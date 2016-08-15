@@ -1,0 +1,72 @@
+﻿@model cbbmsRnD.Models.InvMgt.StockIssueVoucher
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StockIssueVoucher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockIssuedFromInventoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockIssuedFromInventoryId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockIssuedToUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockIssuedToUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockIssuedByUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockIssuedByUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,34 @@
+﻿@model cbbmsR3.Models.LabMgt.BloodSampleTest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BloodSampleTest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodSample.BloodSampleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodSample.BloodSampleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodTest.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodTest.Remarks)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BloodSampleTestId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
