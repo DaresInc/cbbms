@@ -1,0 +1,70 @@
+﻿@model IEnumerable<cbbmsR3.Models.LabMgt.BloodSample>
+
+@{
+    ViewBag.Title = "Index";
+    var grid = new WebGrid(source: Model,canPage: true,rowsPerPage: 10);
+    grid.Pager(WebGridPagerModes.All);
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-responsive  ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InventoryItem.ReferenceDocument)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InventoryItem.ReferenceDocument)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BloodSampleId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BloodSampleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BloodSampleId })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    <h2> Items Form web Grid </h2>
+</div>
+<div>
+    @grid.GetHtml(
+    tableStyle: "table-bordered",
+    headerStyle: "table-striped",
+    footerStyle: "row",
+    rowStyle: "sui-alt-row",
+columns: grid.Columns(
+    grid.Column(header: "S#", format:@<text> <div>@item.WebGrid.Rows.IndexOf(item) </div> </text>),
+    grid.Column(columnName: "InventoryItem", header: "Reference Document"),
+    grid.Column(columnName: "Status.Description", header: "Status"),
+    grid.Column(columnName: "CreatedOn", header: "Creation Date"),
+    grid.Column(columnName: "PersonId", header: "PersonId")))
+</div>

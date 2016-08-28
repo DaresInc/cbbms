@@ -14,6 +14,7 @@ using Microsoft.AspNet.Identity;
 
 namespace cbbmsR3.Controllers
 {
+    [Authorize]
     public class AppFilesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

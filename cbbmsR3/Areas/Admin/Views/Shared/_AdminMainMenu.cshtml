@@ -1,0 +1,64 @@
+﻿
+<link href="~/Content/css/RainBow_Navbar.css" rel="stylesheet" />
+<link href="~/Content/css/StylishSearchBox.css" rel="stylesheet" />
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#admin-Main_Menu_navbar">
+                    
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/Admin/Default">CBBMS</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="admin-Main_Menu_navbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="~/Home"><span class="glyphicon glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
+                    <li class="dropdown">
+                        <a href="~/Admin/Default"><span class="glyphicon glyphicon-dashboard"></span>&nbsp; DashBoard <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Admin/Roles/Index">Roles</a></li>
+                            <li><a href="~/Admin/AppFiles/Index">Upload File</a></li>
+                            <li><a href="#">App User</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Admin/Roles/RoleUsers">Manage Users</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Admin/Roles/ManageUserRoles">Manage Role</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div>
+                  @Html.Partial("_PartialLogin")
+                </div>
+            @*
+         <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" role="search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+
+        </form>
+            *@
+                <div class="form-group">
+                    <form class="form-group-lg">
+                        <div id="custom-search-input">
+                            <div class="input-group" style="width:275px;">
+                                <input type="text" class="search-query form-control" placeholder="Search" role="search" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>

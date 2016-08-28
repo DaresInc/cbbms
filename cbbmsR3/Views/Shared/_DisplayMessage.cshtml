@@ -1,0 +1,26 @@
+﻿@{
+    if (User.Identity.IsAuthenticated == true && Session["SessionName"] == null)
+    {
+        if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+        {
+
+            <div class="alert alert-success fade in " data-dismiss="alert">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Message! </strong> @ViewBag.Message
+            </div>
+        }
+    }
+    else if (User.Identity.IsAuthenticated == false)
+    {
+        if (Session.IsNewSession)
+        {
+            <div class=" alert alert-warning fade in " data-dismiss="alert">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Message! </strong> You are Not Our Permanent Menber. Want To Become
+                <a href="Account\Register">Member</a>
+            </div>
+        }
+
+    }
+
+}

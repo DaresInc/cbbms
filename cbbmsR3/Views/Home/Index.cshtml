@@ -2,30 +2,36 @@
     ViewBag.Title = "Home Page";
 }
 
+
+
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>CBBMS</h1>
+    <p class="lead">A public interest Project Lunched By Joint Team of Sp13 Group under the umberlla of VCOMSATS ,This Project is being develped as Web applications using ASP.Net Web API, CSHTML, CSS(BootStrap) and JavaScript.</p>
+    <p><a href="~/Home/About" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div>
+
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Vision</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            CBBMS will be used for maintaining all the process and activities of blood bank.
+            The purpose of the centralized blood bank management system is to simplify and automate the process of searching for blood in case of emergency and maintain the records of blood donors, recipients and blood stocks in the bank on a centralized repository which is available online.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="~/Home/About">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Project Team</h2>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success"><strong>MS. SANA</strong> Project Supervisor</li>
+            <li class="list-group-item list-group-item-info"><strong>MR. MUHAMMAD HANIF</strong>  Team Lead & PM</li>
+            <li class="list-group-item list-group-item-warning"><strong>MS. IFRAH ALI</strong> Project Engineer</li>
+            <li class="list-group-item list-group-item-danger"><strong>MR. MAZHAR AHMED</strong>  Project Engineer</li>
+        </ul>
     </div>
+
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Highlights</h2>
+        @Html.Partial("_PictureCarousel")
     </div>
 </div>

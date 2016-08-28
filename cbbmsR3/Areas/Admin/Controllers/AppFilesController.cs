@@ -12,6 +12,7 @@ using cbbmsRnD.Models.SysMgt;
 
 namespace cbbmsR3.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AppFilesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

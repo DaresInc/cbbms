@@ -1,0 +1,21 @@
+﻿<div class="navbar navbar-form navbar-right">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="@Url.Action("Index", "Default", new {AreaName="Admin" })"><i class="glyphicon glyphicon-dashboard"></i> Dashboard </a></li>
+                <li><a href="@Url.Action("Index", "Roles", new {AreaName="Admin" })"><i class="glyphicon glyphicon-refresh"></i> Roles </a></li>
+                <li><a href="@Url.Action("Index", "AppFiles", new {AreaName="Admin" })"><i class="glyphicon glyphicon-filter"></i> File Upload </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+

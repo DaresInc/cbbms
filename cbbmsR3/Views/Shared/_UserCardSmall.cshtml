@@ -1,0 +1,103 @@
+﻿
+<style type="text/css">
+   .user-Name{
+    display: inline-block;
+    font-size:x-small;
+    font-weight:bold;
+    font-variant-caps:titling-caps;
+}
+    
+     .img-box {
+        float: left;
+        display: block;
+    }
+
+    .status-box {
+        float: right;
+        display: block;
+    }
+
+    .img {
+        height: 32px;
+        width: 32px;
+
+    }
+
+    .link {
+        color: #365899;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .clearfix {
+        zoom: 1;
+    }
+
+.msg{
+    display: inline-block;
+}
+._recentMsg{
+    font-size:xx-small;
+}
+.new-Msgs{
+    display: inline-block;
+    font-size:xx-small;
+    background: rgb(66, 183, 42);
+}
+.status{
+        display: inline-block;
+        height: 6px;
+        width: 6px;
+}
+    .staus-active {
+        border-radius: 50%;
+        display: inline-block;
+        height: 6px;
+        margin-left: 4px;
+        width: 6px;
+        background: rgb(66, 183, 42);
+    }
+
+    .staus-busy {
+        border-radius: 50%;
+        display: inline-block;
+        height: 6px;
+        margin-left: 4px;
+        width: 6px;
+        background: #ffd800;
+    }
+
+    .staus-offline {
+        border-radius: 50%;
+        display: inline-block;
+        height: 6px;
+        margin-left: 4px;
+        width: 6px;
+        background: #ff0000;
+    }
+</style>
+
+
+<div class="">
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="img-box">
+                <img src="~/Imgs/AppImages/UserPict.jpg" alt="" class="img img-thmb-32" />
+            </div>
+        </div>
+        <div class="col-xs-7">
+            <div class="row">
+                <span class="user-Name"> @User.Identity.Name.ToString()</span>
+                <span class="label label-info new-Msgs">2</span>
+            </div>
+            <div class="row">
+                <div class="_recentMsg">
+                            No recent mesage found.
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2">
+                <span class="status staus-offline"></span>
+        </div>
+    </div>
+</div>
+

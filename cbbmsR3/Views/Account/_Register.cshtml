@@ -1,0 +1,24 @@
+﻿<div class="col-md-4 col-md-offset-4">
+    <h3 style="color:dimgray; text-align: center">Register now to create and fork snippets</h3>
+
+
+
+    <hr class="colorgraph">
+    
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal signin-form", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+        <fieldset>
+            <input class="form-control" placeholder="Username" name="username" type="text">
+            <input class="form-control middle" placeholder="E-mail" name="email" type="text">
+            <input class="form-control middle" placeholder="Password" name="password" type="password" value="">
+            <input class="form-control bottom" placeholder="Confirm Password" name="password_confirmation" type="password" value="">
+            
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Register">
+            <p class="text-center" style="margin-top:10px;">OR</p>
+            <a class="btn btn-lg btn-default btn-block" href="~/Account/login/github"><i class="icon-github"></i> Register with Github</a>
+            <br>
+            <p class="text-center"><a href="~/Account/Login">Already have an account?</a></p>
+        </fieldset>
+}
+</div>

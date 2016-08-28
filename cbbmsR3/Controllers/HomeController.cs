@@ -6,10 +6,11 @@ using System.Web.Mvc;
 
 namespace cbbmsR3.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
+            //if (User.Identity.IsAuthenticated) { ViewBag.Message = "Current User ID :" + UserId.ToString(); }
             return View();
         }
 

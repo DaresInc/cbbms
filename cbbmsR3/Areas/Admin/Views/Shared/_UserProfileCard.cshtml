@@ -1,0 +1,36 @@
+﻿
+<link href="~/Content/css/UserProfileCard.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        <div>
+            <div class="card">
+                <canvas class="header-bg" id="header-blur"></canvas>
+                <div class="avatar">
+                    <img src="~/Imgs/AppImages/50c9f2c6-c5ca-4792-a96d-82b0af433792.png" />
+                </div>
+                <div class="content">
+                    User Level : 
+                    <p>
+                        @{
+                            if (User.IsInRole("admin"))
+                            {
+                                <strong>Admin</strong>
+                            }
+                            else
+                            {
+                                <strong>Member </strong>
+                            }
+                        }
+
+                        <br>
+                    </p>
+                    <p><button type="button" class="btn btn-default">@User.Identity.Name.ToUpper().ToString()</button></p>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+

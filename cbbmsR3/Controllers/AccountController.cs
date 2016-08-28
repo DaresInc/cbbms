@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using cbbmsR3.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace cbbmsR3.Controllers
 {
@@ -19,6 +20,7 @@ namespace cbbmsR3.Controllers
         private ApplicationUserManager _userManager;
 
         public AccountController()
+            : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
         {
         }
 
@@ -26,6 +28,11 @@ namespace cbbmsR3.Controllers
         {
             UserManager = userManager;
             SignInManager = signInManager;
+        }
+
+        public AccountController(UserManager<ApplicationUser> userManager)
+        {
+            UserManager = userManager;
         }
 
         public ApplicationSignInManager SignInManager
@@ -40,27 +47,34 @@ namespace cbbmsR3.Controllers
             }
         }
 
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
+        public UserManager<ApplicationUser> UserManager { get; private set; }
 
-        //
-        // GET: /Account/Login
-        [AllowAnonymous]
+    //
+    // GET: /Account/Login
+    [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> SignIn(FormCollection collection)
+        {
+            LoginViewModel m = new LoginViewModel();
+            m.Email = collection["Email"];
+            m.Password = collection["Password"];
+            m.RememberMe = false;
+            await Login(m, ViewBag.ReturnUrl);
+            return RedirectToLocal(ViewBag.returnUrl);
+        }
+
+        public ActionResult index()
+        {
+            return View();
+        }
         //
         // POST: /Account/Login
         [HttpPost]
@@ -271,6 +285,88 @@ namespace cbbmsR3.Controllers
             return View();
         }
 
+        // POST: /Account/Manage
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Manage(ManageUserViewModel model)
+        {
+            bool hasPassword = HasPassword();
+            ViewBag.HasLocalPassword = hasPassword;
+            ViewBag.ReturnUrl = Url.Action("Manage");
+            if (hasPassword)
+            {
+                if (ModelState.IsValid)
+                {
+                    IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Manage", new { Message = ManageMessageId.ChangePasswordSuccess });
+                    }
+                    else
+                    {
+                        AddErrors(result);
+                    }
+                }
+            }
+            else
+            {
+                // User does not have a password so remove any validation errors caused by a missing OldPassword field
+                ModelState state = ModelState["OldPassword"];
+                if (state != null)
+                {
+                    state.Errors.Clear();
+                }
+
+                if (ModelState.IsValid)
+                {
+                    IdentityResult result = await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Manage", new { Message = ManageMessageId.SetPasswordSuccess });
+
+                    }
+                    else
+                    {
+                        AddErrors(result);
+                    }
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        private bool HasPassword()
+        {
+            var user = UserManager.FindById(User.Identity.GetUserId());
+            if (user != null)
+            {
+                return user.PasswordHash != null;
+            }
+            return false;
+        }
+        public enum ManageMessageId
+        {
+            ChangePasswordSuccess,
+            SetPasswordSuccess,
+            RemoveLoginSuccess,
+            Error
+        }
+        //
+        //GET: /Account/Manage
+        public ActionResult Manage(ManageMessageId? message)
+        {
+            ViewBag.StatusMessage =
+                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
+                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
+                : message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
+                : message == ManageMessageId.Error ? "An error has occurred."
+                : "";
+            ViewBag.HasLocalPassword = HasPassword();
+            ViewBag.ReturnUrl = Url.Action("Manage");
+            return View();
+        }
+
         //
         // POST: /Account/ExternalLogin
         [HttpPost]
@@ -426,6 +522,7 @@ namespace cbbmsR3.Controllers
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
+        private UserManager<ApplicationUser> userManager;
 
         private IAuthenticationManager AuthenticationManager
         {

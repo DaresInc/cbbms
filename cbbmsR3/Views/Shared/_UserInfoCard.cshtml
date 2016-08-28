@@ -1,0 +1,82 @@
+﻿<style type="text/css">
+    .fbxWelcomeBoxSmall, 
+    .fbxWelcomeBoxSmallLeft {
+    margin-right: 6px;
+    margin-top: -1px;
+    }
+    .litestandClassicWelcomeBox{ 
+        margin-bottom: 12px;
+    }
+
+    .fbxWelcomeBoxSmall, 
+    .fbxWelcomeBoxSmallRow{
+    border-radius: 2px;
+    margin-left: -6px;
+    padding: 4px 6px;
+    position: relative;
+    }
+    .clearfix{
+        zoom: 1;
+    }
+    .litestandClassicWelcomeBox.fbxWelcomeBox a,
+    .litestandClassicWelcomeBox.fbxWelcomeBoxSmall a {
+    color: #1d2129;
+    }
+
+    .fbxWelcomeBoxProfilePicBlock _8o _8r lfloat _ohe{
+
+    }
+    
+    .fbxWelcomeBox a, .litestandClassicWelcomeBox.fbxWelcomeBoxSmall a {
+    color: #1d2129;
+    }
+
+    .fbxWelcomeBoxProfilePic _54rv{
+
+    } 
+    
+    img {
+    border: 0;
+    }
+    
+    .fbxWelcomeBoxName{
+
+    }
+    ._8u{
+
+    }
+    ._42ef{
+
+    }
+</style>
+@if(User.Identity.IsAuthenticated)
+{
+
+    <div id="pagelet_welcome_box" data-referrer="pagelet_welcome_box">
+        <ul class="fbxWelcomeBoxSmall litestandClassicWelcomeBox" data-gt="{&quot;ref&quot;:&quot;bookmarks&quot;}">
+            <li class="fbxWelcomeBoxSmallRow">
+                <div class="clearfix">
+                    <a class="fbxWelcomeBoxBlock fbxWelcomeBoxSmallLeft fbxWelcomeBoxProfilePicBlock _8o _8r lfloat _ohe" aria-hidden="true" href="https://www.facebook.com/Whodareswin?ref=bookmarks" tabindex="-1">
+                        <img class="_s0 fbxWelcomeBoxImg fbxWelcomeBoxProfilePic _54rv img" src="~/Imgs/AppImages/2eb940b1-cb57-4c97-a1a0-64ee1a183fac.png" alt="" id="profile_pic">
+                    </a>
+                    <div class="_8u _42ef">
+                        <a class="fbxWelcomeBoxName" href="https://www.facebook.com/Whodareswin?ref=bookmarks" data-testid="fb_welcome_box">Muhammad Usama</a>
+                    </div>
+                </div>
+            </li>
+            <li class="fbxWelcomeBoxSmallRow">
+                <div class="clearfix">
+                    <a class="fbxWelcomeBoxSmallLeft _8o _8r lfloat _ohe" href="https://www.facebook.com/Whodareswin/about?ref=bookmarks&amp;section=work" tabindex="-1" aria-hidden="true">
+                        <i class="fbxWelcomeBoxImg img sp_Wk9gaiNG7YU sx_b79ace"></i>
+                    </a>
+                    <div class="_8u _42ef">
+                        <a href="https://www.facebook.com/Whodareswin/about?ref=bookmarks&amp;section=work">Edit Profile</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+}
+

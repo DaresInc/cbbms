@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Admin Dashboard";
+}
+
+
+<aside class="container col-md-3">
+    @*
+    <div class="row clearfix">
+
+    </div>
+    <div class="row">
+        @Html.Partial("_UserProfileCard")
+    </div>
+    <div class="row container-fluid">
+        <div class="nav navbar ">
+            <div class="navbar-left">
+                <ul class="nav-stacked">
+                    <li><a href="@Url.Action("Index", "Default", new {AreaName="Admin" })"><i class="glyphicon glyphicon-dashboard"></i> Dashboard </a></li>
+                    <li><a href="@Url.Action("Index", "Roles", new {AreaName="Admin" })"><i class="glyphicon glyphicon-refresh"></i> Roles </a></li>
+                    <li><a href="@Url.Action("Index", "AppFiles", new {AreaName="Admin" })"><i class="glyphicon glyphicon-filter"></i> File Upload </a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    *@
+    <div>
+       
+    </div>
+</aside>
+<aside class="container col-md-9">
+    @Html.Partial("_AdminPanel")
+</aside>
+

@@ -6,9 +6,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="~/Content/css/ToggleNavBar.css" rel="stylesheet" />
 </head>
 <body>
+    @*
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -24,40 +25,30 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li><a href="~/Admin/Default"><i class="glyphicon glyphicon-dashboard"></i> Dashboard </a></li>
+                    <li>@Html.ActionLink("Accounts Partial", "Index", "Account")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @Html.Partial("_PartialLogin")
             </div>
         </div>
     </div>
+    *@
+        <div>
+            @Html.Partial("_MainMenu")
+        </div>
     <div class="container body-content">
         <div class="alert">
-            @ViewBag.Message
+            @Html.Partial("_DisplayMessage")
         </div>
-        @{ 
-
-            if (User.Identity.IsAuthenticated)
-            {
-                    <div class="row">
-                        <div class="col-lg-3">
-                            @Html.Partial("_AppMenuBar")
-                        </div>
-                        <div class="col-lg-9">
-                            @RenderBody()
-                        </div>
-
-                    </div>
-            }
-            else
-            {
-                    @RenderBody()
-            }
-        }
+        @RenderBody()
+    </div>
+    <div class="container">
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Powers By <span class="badge">Dares</span>  Copy Rights Reserved <a class="nav navbar-nav navbar-right"><span class="badge"> Version 1.0.1.78</span></a></p>
         </footer>
     </div>
-
+    <script src="~/Content/js/NavBarAutoActivateMenu.js"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

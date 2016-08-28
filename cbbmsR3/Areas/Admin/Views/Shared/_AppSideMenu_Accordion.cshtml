@@ -1,0 +1,331 @@
+﻿<style type="text/css">
+    body{margin-top:20px;}
+.glyphicon { margin-right:10px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 15px }
+.panel-body .table {margin-bottom: 0px; }
+</style>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapsex">
+                                @Html.Partial("_UserCardSmall")
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapsex" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="table">
+                                @*User Notifications*@   
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-new-window text-success"></span>
+                                        <a href="~/Account/Notifications">Notifications</a>
+                                        <span class="label label-success"></span>
+                                    </td>
+                                </tr>
+                                @*ToDos/Tasks*@
+
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-file text-info"></span>
+                                        <a href="~/Account/ToDos">ToDos</a>
+                                        <span class="label label-success"></span>
+                                    </td>
+                                </tr>
+                                @*Comments*@
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-comment text-success">
+                                        </span><a href="http://www.jquery2dotnet.com">Comments</a>
+                                        <span class="label label-success"></span>
+                                    </td>
+                                </tr>
+                               @*News*@
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-flash text-success">
+                                        </span><a href="~/StockIssueVouchers">News</a>
+                                        <span class="label label-success"></span>
+                                    </td>
+                                </tr>
+                                @*Newsletters*@
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-file text-info"></span>
+                                        <a href="~/User/Newsletters">Newsletters</a>
+                                        <span class="label label-success"></span>
+                                    </td>
+                                </tr>
+                                @*User Bills*@
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-shopping-cart text-info"></span>
+                                        <a href="~/User/Bills">Bills</a>
+                                        <span class="label label-success"></span>
+                                    </td>
+                                </tr>
+                                @*Uploads/ Files*@
+
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "AppFiles", new {AreaName="Admin" })"><i class="glyphicon glyphicon-filter"></i> Uploads </a></td>
+
+                                </tr>
+                                @*User Account Settings*@
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-glass text-primary"></span><a href="~/Account/UserSettings">Settings</a>
+                                    </td>
+                                </tr>
+
+                                @*Delete Account*@
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-trash text-danger"></span><a href="http://www.jquery2dotnet.com" class="text-danger">
+                                            Delete Account
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                <span class="glyphicon glyphicon-phone">
+                                </span>Configuration Management
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "Items")"><i class="glyphicon glyphicon-map-marker"></i> Items </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "ItemCategories")"><i class="glyphicon glyphicon-barcode"></i> Item Categories </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "UoMs")"><i class="glyphicon glyphicon-star"></i> Unit of Measurements(UOM) </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "Products")"><i class="glyphicon glyphicon-file"></i> System </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "Modules")"><i class="glyphicon glyphicon-file"></i> Module </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "Components")"><i class="glyphicon glyphicon-file"></i> Components  </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "BuildHistories")"><i class="glyphicon glyphicon-file"></i> Build History Dossier (BHD) </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "EngineeringChangeRequests")"><i class="glyphicon glyphicon-file"></i> Engineering Change Requests(ECR) </a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                                <span class="glyphicon glyphicon-globe">
+                                </span>Inventory Management
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td><a href="@Url.Action("Index","Inventories")"><i class="glyphicon glyphicon-user"></i> Inventories </a></td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index","InventoryItems")"><i class="glyphicon glyphicon-user"></i> Inventory Items </a></td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "StockIssueVouchers")"><i class="glyphicon glyphicon-star"></i> Stock Issue Voucher(SIV) </a></td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "StockIssuedItems")"><i class="glyphicon glyphicon-star"></i> Stock Issued Items </a></td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "StockRecieveVouchers")"><i class="glyphicon glyphicon-star"></i> Stock Recieve Voucher(SRV)</a></td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "StockRecievedItems")"><i class="glyphicon glyphicon-star"></i> Stock Recieve Items </a></td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "StockReturnVouchers")"><i class="glyphicon glyphicon-star"></i> Stock Return Voucher(SRnV)</a></td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "StockReturnedItems")"><i class="glyphicon glyphicon-star"></i> Stock Returned Items </a></td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "StockTransferVouchers")"><i class="glyphicon glyphicon-star"></i> Stock Transfer Voucher(STV)</a></td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "StockTransferedItems")"><i class="glyphicon glyphicon-star"></i> Stock Transfered Items </a></td></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "SwiftInventoryTransfers")"><i class="glyphicon glyphicon-star"></i> Swift Inventory Transfer Facility (STIF)</a></td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                                <span class="glyphicon glyphicon-circle-arrow-down">
+                                </span>Lab Management
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse6" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "BloodSamples")"><i class="glyphicon glyphicon-file"></i> Blood Samples </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "BloodSampleTests")"><i class="glyphicon glyphicon-file"></i> Blood Sample Tests </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "BloodTestDefaultValues")"><i class="glyphicon glyphicon-file"></i> Blood Test Default Values </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "BloodTestDetails")"><i class="glyphicon glyphicon-file"></i> Blood Test Details </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "BloodTests")"><i class="glyphicon glyphicon-file"></i> Blood Tests </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "BloodTestTypes")"><i class="glyphicon glyphicon-file"></i> Blood Test Types </a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                                <span class="glyphicon glyphicon-record">
+                                </span>Project Management
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse7" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "Projects")"><i class="glyphicon glyphicon-flag"></i> Projects </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "ToDoes")"><i class="glyphicon glyphicon-flag"></i> ToDos Tasks </a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+                                <span class="glyphicon glyphicon-calendar">
+                                </span>System Management
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse8" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "Locations")"><i class="glyphicon glyphicon-file"></i> Location </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "AppFiles")"><i class="glyphicon glyphicon-file"></i> Upload Files </a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+                                <span class="glyphicon glyphicon-eye-open">
+                                </span>Reports Management
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse9" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td><a href="@Url.Action("Index", "AppFiles")"><i class="glyphicon glyphicon-file"></i> Reports </a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+                                <span class="glyphicon glyphicon-star-empty">
+                                </span>User Management
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse10" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td><a href="~/Admin/Default"><i class="glyphicon glyphicon-dashboard"></i> Dashboard </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="~/Admin/Roles"><i class="glyphicon glyphicon-refresh"></i> Roles </a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="~/Admin/AppFiles"><i class="glyphicon glyphicon-filter"></i> File Upload </a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*
+    <div class="col-sm-9 col-md-9">
+        <div class="well">
+            <h1>
+                Accordion Menu With Icon
+            </h1>
+            Admin Dashboard Accordion Menu
+        </div>
+    </div>
+        *@
+    </div>
+</div>
+

@@ -1,0 +1,70 @@
+﻿@model cbbmsR3.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="container">
+    <div class="row text-center  ">
+        <div class="col-md-12">
+            <br><br>
+            <h2> Binary Admin : Register</h2>
+
+            <h5>( Register yourself to get access )</h5>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>  New User ? Register Yourself </strong>
+                </div>
+                <div class="panel-body">
+                    
+                        <br>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-circle-o-notch"></i></span>
+                            <input type="text" class="form-control" name="Name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                            <input type="text" class="form-control" name="UserName" placeholder="Desired Username">
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">@@</span>
+                            <input type="text" class="form-control" name="Email" placeholder="Your Email">
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" name="Password" placeholder="Enter Password">
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" name="ConfirmPassword" placeholder="Retype Password">
+                        </div>
+
+                        <a href="~/Account/Register" class="btn btn-success ">Register Me</a>
+                        <hr>
+                        Already Registered ?  <a href="~/Account/Login">Login here</a>
+                   
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+}
+
+<link href="~/Content/pRegister/custom.css" rel="stylesheet" />
+<script src="~/Content/pRegister/custom.js"></script>
+<link href="~/Content/pRegister/font-awesome.css" rel="stylesheet" />
+<script src="~/Content/pRegister/jquery-1.10.2.js"></script>
