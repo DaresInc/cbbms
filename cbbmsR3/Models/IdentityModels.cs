@@ -27,7 +27,7 @@ namespace cbbmsR3.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection")
         {
         }
 
@@ -102,5 +102,6 @@ namespace cbbmsR3.Models
         public System.Data.Entity.DbSet<cbbmsR3.Models.LabMgt.BloodTestDefaultValue> BloodTestDefaultValues { get; set; }
 
         public System.Data.Entity.DbSet<cbbmsR3.Models.LabMgt.BloodTestDetail> BloodTestDetails { get; set; }
+        
     }
 }
